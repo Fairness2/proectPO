@@ -21,7 +21,7 @@ class StageController extends Controller
     public function addStage(Request $request){
         $name = $request->get('name');
         $previous = $request->get('previous', null);
-        $next = $request->get('previous', null);
+        $next = $request->get('next', null);
         $res = DB::table('stages')->insertGetId(['name' => $name, 'previous' => $previous, 'next' => $next]);
         return ['id' => $res];
     }
